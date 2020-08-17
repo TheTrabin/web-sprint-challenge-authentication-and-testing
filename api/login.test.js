@@ -5,10 +5,10 @@ const request = require('supertest');
 const db = require('../database/dbConfig');
 
 describe('login', () => {
-    beforeAll(async () => {
+    beforeEach(async () => {
         await db('users').truncate();
       });
-      
+
 	it('200', async () => {
 		await request(server)
 			.post('/api/auth/register')

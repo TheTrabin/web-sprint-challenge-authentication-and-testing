@@ -5,12 +5,12 @@ const db = require('../database/dbConfig');
 
 
 describe('Register', () => {
-    beforeAll(async () => {
+    beforeEach(async () => {
         await db('users').truncate();
       });
-      
-const newUser = { 'username': 'someone', 'password': 'someone', 'role' : 1};
-const someone = { 'username': 'TheTrabin', 'password': 'waffles', 'role' : 1};
+
+const newUser = { username: 'someone', password: 'someone', role : 1};
+const someone = { username: 'TheTrabin', password: 'waffles', role : 2};
 
 	it('returns a json obj', async () => {
 		await request(server)
