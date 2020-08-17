@@ -8,6 +8,7 @@ describe('Register', () => {
     beforeAll(async () => {
         await db('users').truncate();
       });
+      
 const newUser = { 'username': 'someone', 'password': 'someone', 'role' : 1};
 const someone = { 'username': 'TheTrabin', 'password': 'waffles', 'role' : 1};
 

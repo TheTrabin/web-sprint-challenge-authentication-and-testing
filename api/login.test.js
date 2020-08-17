@@ -8,6 +8,7 @@ describe('login', () => {
     beforeAll(async () => {
         await db('users').truncate();
       });
+      
 	it('200', async () => {
 		await request(server)
 			.post('/api/auth/register')
