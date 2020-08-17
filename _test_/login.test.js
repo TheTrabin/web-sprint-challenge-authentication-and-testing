@@ -1,6 +1,6 @@
 /** @format */
 
-const server = require('./server');
+const server = require('../api/server');
 const request = require('supertest');
 const db = require('../database/dbConfig');
 
@@ -10,18 +10,21 @@ describe('login', () => {
       });
 
 	it('200', async () => {
+const stump = { username: 'someone', password: 'waffles', role: 1 }
+const waffle = {username: 'someone', password: 'waffles'}
 		await request(server)
 			.post('/api/auth/register')
-			.send({ 'username': 'someone', 'password': 'waffles', 'role': 1 })
+			.send(stump)
 			.then(async (res) => {
 				await request(server)
 					.post('/api/auth/login')
-					.send({ 'username': 'someone', 'password': 'waffles' })
-					.then((res) => expect(res.status).toBe(200));
+					.send(waffle)
+
+					.then((res) => expect(res.status).toBe(200))
 			})
 			.catch((err) => console.log(err));
 	});
-});
+
 
 it('verify json object', async () => {
 	await request(server)
@@ -34,4 +37,5 @@ it('verify json object', async () => {
                 .then(res => {
 				expect(res.type).toBe('application/json');})
 		});
+});
 });

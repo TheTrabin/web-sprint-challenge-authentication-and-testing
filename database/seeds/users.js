@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
-        {id: 1, username: 'Mike', password: '$2y$14$Y.Y/PrMbCV9Cmw2Imrrtl.2DesBfXyqBm9ZXPR6mizwdo6G/pBUGq', 'role' : 1},
-        {id: 2, username: 'Trabin', password: '$2y$14$uxiwWB98H2dR/Z7mNv17O.Bokd20OW1MyiZoYxM8BiOxVyUbjIQO6', 'role' : 1},
-        {id: 3, username: 'Baker', password: '$2y$12$IP05IPcgxQyXWDrakwy5UesD5L8IPMs8dnB5qGkA0DBeWzzry1O/i', 'role' : 2}
+        {id: 1, username: 'Mike', password: '$2y$12$wtPJHGM3iRdAP7eykc/ZF.1g8B1qH0/8T6DEi4cKJv5KPkehWm7FS', 'role' : 1},
+        {id: 2, username: 'Trabin', password: '$2y$12$YcQ4Ig9xCgIkcb4KYwMeS.nmf.GbgJJQsy.94ZndT73ohZFrIfa/.', 'role' : 1},
+        {id: 3, username: 'Baker', password: '$2y$12$IUe62ScF4WJW73x8r7WH2ul66YGGkc5DBhEo2bANj/faIELaCoajq', 'role' : 2}
       ]);
     });
 };
