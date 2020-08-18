@@ -18,17 +18,21 @@ describe('User List tests', () => {
 		await request(server)
 			.post('/api/auth/register')
 			.send(mike)
-			.then(async (res) => {
+			.then(async () => {
 				await request(server)
 					.post('/api/auth/login')
 					.send(mikeLogger)
 					.expect(200)
 					.then(async (res) => {
 						const token = res.body.token;
+
 						await request(server)
 							.get('/api/users')
 							.set('authorization', token)
-							.expect(200);
+							.then((res) => {
+								expect(res.status).toBe(200);
+							})
+							
 					})
 					.catch((error) => console.log(error));
 			});
